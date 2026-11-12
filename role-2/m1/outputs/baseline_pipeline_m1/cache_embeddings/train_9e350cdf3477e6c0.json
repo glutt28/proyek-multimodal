@@ -1,0 +1,34 @@
+{
+  "spec": {
+    "pipeline_version": "m1_frozen_retrieval_v1",
+    "split": "train",
+    "data_fingerprint": "7726489e8f621d41c4fab8d3658aae8e76c9bacf0e893860fbbd222e7246679a",
+    "image_model": "sentence-transformers/clip-ViT-B-32",
+    "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+    "text_id_model": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+    "text_id_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+    "text_en_model": "sentence-transformers/clip-ViT-B-32",
+    "text_en_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+    "device": "cpu",
+    "image_batch_size": 16,
+    "text_batch_size": 32,
+    "embedding_dtype": "float32",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.1",
+      "Pillow": "12.3.0",
+      "torch": "2.15.0",
+      "sentence-transformers": "6.3.0",
+      "transformers": "5.22.2"
+    }
+  },
+  "created_at_jakarta": "2026-11-12T20:11:56.362966+07:00",
+  "rows": 2072,
+  "embedding_shape": [
+    2072,
+    512
+  ],
+  "encoding_seconds": 40.89125758299633,
+  "trainable_encoder_parameters": 0,
+  "embedding_cache_sha256": "e834f427798c133f72a12004c2b108ef01ecfd21f83d1770db52f0fc98bee0f6"
+}

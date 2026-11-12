@@ -1,0 +1,107 @@
+{
+  "created_at_jakarta": "2026-11-12T20:12:48.559259+07:00",
+  "data_root": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/bundle-mahasiswa",
+  "output_dir": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/m1/outputs/baseline_pipeline_m1",
+  "device": "cpu",
+  "seed": 42,
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "Pillow": "12.3.0",
+    "torch": "2.15.0",
+    "sentence-transformers": "6.3.0",
+    "transformers": "5.22.2"
+  },
+  "models": {
+    "image_and_english_text": "sentence-transformers/clip-ViT-B-32",
+    "image_and_english_text_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+    "indonesian_text": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+    "indonesian_text_revision": "58edf8cada9e398793dca955574a48cbb7f18be2"
+  },
+  "split_rows": {
+    "train": 2072,
+    "val": 275
+  },
+  "cache": {
+    "train": {
+      "cache_file": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/m1/outputs/baseline_pipeline_m1/cache_embeddings/train_9e350cdf3477e6c0.npz",
+      "cache_used": false,
+      "spec": {
+        "pipeline_version": "m1_frozen_retrieval_v1",
+        "split": "train",
+        "data_fingerprint": "7726489e8f621d41c4fab8d3658aae8e76c9bacf0e893860fbbd222e7246679a",
+        "image_model": "sentence-transformers/clip-ViT-B-32",
+        "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+        "text_id_model": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+        "text_id_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+        "text_en_model": "sentence-transformers/clip-ViT-B-32",
+        "text_en_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+        "device": "cpu",
+        "image_batch_size": 16,
+        "text_batch_size": 32,
+        "embedding_dtype": "float32",
+        "packages": {
+          "numpy": "2.5.4",
+          "pandas": "3.1.1",
+          "Pillow": "12.3.0",
+          "torch": "2.15.0",
+          "sentence-transformers": "6.3.0",
+          "transformers": "5.22.2"
+        }
+      }
+    },
+    "val": {
+      "cache_file": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/m1/outputs/baseline_pipeline_m1/cache_embeddings/val_82e5b0dd91f26904.npz",
+      "cache_used": false,
+      "spec": {
+        "pipeline_version": "m1_frozen_retrieval_v1",
+        "split": "val",
+        "data_fingerprint": "da9217e5d836bebfd615822cfd743313a59b0bdacea65bdf0c905fda43ae4330",
+        "image_model": "sentence-transformers/clip-ViT-B-32",
+        "image_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+        "text_id_model": "sentence-transformers/clip-ViT-B-32-multilingual-v1",
+        "text_id_revision": "58edf8cada9e398793dca955574a48cbb7f18be2",
+        "text_en_model": "sentence-transformers/clip-ViT-B-32",
+        "text_en_revision": "327ab6726d33c0e22f920c83f2ff9e4bd38ca37f",
+        "device": "cpu",
+        "image_batch_size": 16,
+        "text_batch_size": 32,
+        "embedding_dtype": "float32",
+        "packages": {
+          "numpy": "2.5.4",
+          "pandas": "3.1.1",
+          "Pillow": "12.3.0",
+          "torch": "2.15.0",
+          "sentence-transformers": "6.3.0",
+          "transformers": "5.22.2"
+        }
+      }
+    }
+  },
+  "evaluation": {
+    "split": "val",
+    "gallery": "all rows in val.csv, original CSV order",
+    "ground_truth": "paired row/image_id from manifest; one relevant item per query",
+    "directions": [
+      "image_to_text_id",
+      "text_id_to_image",
+      "image_to_text_en",
+      "text_en_to_image"
+    ],
+    "recall_ks": [
+      1,
+      5,
+      10
+    ],
+    "map_k": 10,
+    "top_k": 10,
+    "tie_break": "stable; candidate CSV order",
+    "encoder_trainable_parameters": 0
+  },
+  "artifacts": {
+    "metrics": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/m1/outputs/baseline_pipeline_m1/metrics_val_four_directions.csv",
+    "language_gap": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/m1/outputs/baseline_pipeline_m1/language_gap_recall_at_1.csv",
+    "examples_train": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/m1/outputs/baseline_pipeline_m1/examples_train_text_id_to_image_topk.csv",
+    "predictions_val_topk": "/Users/glutto/Documents/InformaticsEngineering/DeepMultimodalLearning/Final Project/m1/outputs/baseline_pipeline_m1/predictions_val_topk_four_directions.csv"
+  }
+}
